@@ -1,10 +1,6 @@
-import Router from "next/router";
-import {Button, Typography} from "@mui/material";
-import Link from "next/link";
-import MyAuth from "../lib/auth";
+import {Typography} from "@mui/material";
 
 export default function Navbar() {
-    const {user, isLoaded, logout} = MyAuth();
     return (
         <div style={{
             zIndex: 100,
@@ -30,25 +26,6 @@ export default function Navbar() {
                     MWENCLUBHOUSE
                 </Typography>
             </div>
-            {isLoaded &&
-                (user ?
-                        <Button
-                            onClick={async () => {
-                                await logout();
-                            }}
-                            style={{backgroundColor: "#651"}}>
-                            Logout
-                        </Button>:
-                        <Button
-                            style={{backgroundColor: "#651"}}
-                            onClick={() => {
-                                Router.replace("/login").then();
-                            }}
-                        >
-                            Login
-                        </Button>
-                )
-            }
         </div>
     )
 

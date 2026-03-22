@@ -1,10 +1,8 @@
-import React, {useState} from "react";
+import React from "react";
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import {theme} from "../lib/theme";
-import Router from "next/router";
-import {Button, CssBaseline, ThemeProvider, Typography} from "@mui/material";
-import MyAuth, {AuthProvider} from "../lib/auth";
+import { CssBaseline, ThemeProvider } from "@mui/material";
 import Navbar from "../components/navbar";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -20,7 +18,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         <ThemeProvider theme={theme}>
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline />
-          <AuthProvider>
             <Navbar />
             <div style={{
               margin: "0 auto",
@@ -28,7 +25,6 @@ function MyApp({ Component, pageProps }: AppProps) {
             }}>
                 <Component {...pageProps} />
             </div>
-          </AuthProvider>
         </ThemeProvider>
       </React.Fragment>
   )

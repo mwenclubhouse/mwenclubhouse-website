@@ -4,14 +4,9 @@ import { NextPage } from "next";
 import { useEffect, useState } from "react";
 import RequireLayout from "../../components/require";
 import Link from "next/link";
-import MyAuth from "../../lib/auth";
 
 const Dashboard: NextPage = (props) => {
     const [queueupServers, setQueueupServers] = useState<any[]>([]);
-    const { user } = MyAuth();
-    useEffect(() => {
-        if (user) {}
-    }, [user]);
     return (
         <RequireLayout>
             {
