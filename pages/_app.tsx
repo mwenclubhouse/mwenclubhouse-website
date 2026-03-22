@@ -1,9 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import {theme} from "../lib/theme";
-import {CssBaseline, ThemeProvider} from "@mui/material";
-import {AuthProvider} from "../lib/auth";
+import Router from "next/router";
+import {Button, CssBaseline, ThemeProvider, Typography} from "@mui/material";
+import MyAuth, {AuthProvider} from "../lib/auth";
+import Navbar from "../components/navbar";
 
 function MyApp({ Component, pageProps }: AppProps) {
   React.useEffect(() => {
@@ -19,7 +21,13 @@ function MyApp({ Component, pageProps }: AppProps) {
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline />
           <AuthProvider>
-            <Component {...pageProps} />
+            <Navbar />
+            <div style={{
+              margin: "0 auto",
+              maxWidth: 1080
+            }}>
+                <Component {...pageProps} />
+            </div>
           </AuthProvider>
         </ThemeProvider>
       </React.Fragment>
