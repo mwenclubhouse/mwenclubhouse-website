@@ -5,17 +5,12 @@ import { useEffect, useState } from "react";
 import RequireLayout from "../../components/require";
 import Link from "next/link";
 import MyAuth from "../../lib/auth";
-import { Queueup } from "../../src/api";
 
 const Dashboard: NextPage = (props) => {
     const [queueupServers, setQueueupServers] = useState<any[]>([]);
     const { user } = MyAuth();
     useEffect(() => {
-        if (user) {
-            Queueup.getServers(user).then((response) => {
-                setQueueupServers(response.servers || []);
-            })
-        }
+        if (user) {}
     }, [user]);
     return (
         <RequireLayout>
