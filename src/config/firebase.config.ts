@@ -1,23 +1,22 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-
+// ============================================================================
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 // Your web app's Firebase configuration
+// ============================================================================
 
 const firebaseConfig = {
     apiKey: process.env.NEXT_PUBLIC_FB_API_KEY,
-    authDomain: "mwenclubhouse.firebaseapp.com",
-    databaseURL: "https://mwenclubhouse.firebaseio.com",
-    projectId: "mwenclubhouse",
-    storageBucket: "mwenclubhouse.appspot.com",
+    authDomain: process.env.NEXT_PUBLIC_FB_AUTH_DOMAIN,
+    databaseURL: process.env.NEXT_PUBLIC_FB_DATABASE_URL,
+    projectId: process.env.NEXT_PUBLIC_FB_PROJECT_ID,
+    storageBucket: process.env.NEXT_PUBLIC_FB_STORAGE_BUCKET,
     messagingSenderId: process.env.NEXT_PUBLIC_FB_MESSAGINGSENDER_ID,
-    appId: "1:284911242659:web:3a8b844394682b57839e16",
+    appId: process.env.NEXT_PUBLIC_FB_APP_ID,
     measurementId: process.env.NEXT_PUBLIC_FB_MEASUREMENT_ID
 };
 
 
 // Initialize Firebase (disable for now)
 // @ts-ignore
-// export const app = undefined;
 export const app = initializeApp(firebaseConfig);

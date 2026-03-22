@@ -9,20 +9,13 @@ const Home: NextPage = () => {
         <meta name="description" content="
           The MWENCLUBHOUSE are services organized by 
           Matthew Wen. Check us out to try some of our 
-          upcoming Projects
-        " />
+          upcoming Projects" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <div>
-        <p>Website is a Work in Progress</p>
-        <p>Things Coming</p>
-        <ol>
-          <li>Queueup Discord Bot</li>
-          <li>Archieve ECE 20001 Website</li>
-          <li>A few other dead projects. You will see...</li>
-        </ol>
-        <p>You can check <a href="https://www.matthewwen.com">https://www.matthewwen.com</a> for Updates</p>
+        <p>Website is a Work in Progress ... for about 4 years</p>
+        <p>maybe, some fun / weird content is coming</p>
       </div>
     </div>
   )

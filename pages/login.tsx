@@ -31,11 +31,6 @@ export default function LoginPage(props: any) {
     }
     return (
         <div style={{maxWidth: 500, margin: "0 auto"}}>
-            <Head>
-                <title>VRm: Login Page</title>
-                <meta name={"description"} content={"Login Page for VRm"}/>
-                <link rel={"icon"} href={"/favicon.ico"} />
-            </Head>
             {message &&
                 <Typography variant={"subtitle2"} style={{color: "red"}}> {message} </Typography>
             }

@@ -1,7 +1,6 @@
 import Router from "next/router";
 import {Button, Typography} from "@mui/material";
 import Link from "next/link";
-import React from "react";
 import MyAuth from "../lib/auth";
 
 export default function Navbar() {
@@ -17,12 +16,19 @@ export default function Navbar() {
             backgroundColor: "#222",
             padding: "2px 20px",
             width: "100%"}}>
-            <div style={{marginTop: "auto", marginBottom: "auto", flex: 1}}>
-                <Link href={"/"} passHref>
-                    <Typography>
-                        MWENCLUBHOUSE
-                    </Typography>
-                </Link>
+            <div style={{
+                    marginTop: "auto", 
+                    marginBottom: "auto", 
+                    flex: 1,
+                    cursor: "pointer"
+                }} 
+                onTouchMove={() => {}}
+                onClick={() => {
+                    window.location.href = "/"
+                }}>
+                <Typography>
+                    MWENCLUBHOUSE
+                </Typography>
             </div>
             {isLoaded &&
                 (user ?
