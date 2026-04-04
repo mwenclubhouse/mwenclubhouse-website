@@ -1,0 +1,38 @@
+
+# ============================================================================
+# Setup Instructions
+# 1. create a runner based off of repo: 
+#    ex: https://github.com/mwenclubhouse/mwenclubhouse-website/settings/actions/runners
+# 2. run the ./svc install + start scripts for the instance
+# ============================================================================
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: deploy-main
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Deploy
+        run: |
+          set -euo pipefail
+          WEBSITE_DIR=$(pwd -L)
+          TEMP_DIR=$(mktemp -d -t mwenclubhouse-website-XXXXXX) || exit 1
+          trap 'rm -rf "$TEMP_DIR"' EXIT HUP INT TERM
+          echo "Temporary directory created: $TEMP_DIR"
+          (
+            git clone --depth=1 git@github.com:matthewwen/mwenclubhouse.git $TEMP_DIR
+            cd $TEMP_DIR
+            chmod +x ./config/cicd.sh
+            ./config/cicd.sh node-e2e --website $WEBSITE_DIR
+          )
