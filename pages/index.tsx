@@ -10,7 +10,6 @@ const Home: NextPage = () => {
       <Head>
         <title>MWENCLUBHOUSE</title>
         <meta name="description" content="Matthew Wen's corner of the internet. Find my personal site, metrics, Excalidraw, and docs." />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Box component="main" sx={{ px: { xs: 2, sm: 3 }, py: { xs: 5, sm: 9 } }}>

@@ -1,6 +1,7 @@
 import React from "react";
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
+import Head from 'next/head'
 import {theme} from "@/lib/theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import Navbar from "@/components/navbar";
@@ -15,6 +16,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [])
   return (
       <React.Fragment>
+        <Head>
+          <link rel="icon" type="image/png" href="/mwenclubhouse-logo.png" />
+        </Head>
         <ThemeProvider theme={theme}>
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline />
