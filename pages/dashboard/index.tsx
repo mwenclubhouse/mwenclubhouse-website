@@ -2,7 +2,7 @@ import { Button, Card, CardContent, Typography } from "@mui/material";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { NextPage } from "next";
 import { useEffect, useState } from "react";
-import RequireLayout from "../../components/require";
+import RequireLayout from "@/components/require";
 import Link from "next/link";
 
 const Dashboard: NextPage = (props) => {

@@ -1,9 +1,9 @@
 import React from "react";
-import '../styles/globals.css'
+import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
-import {theme} from "../lib/theme";
+import {theme} from "@/lib/theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
-import Navbar from "../components/navbar";
+import Navbar from "@/components/navbar";
 
 function MyApp({ Component, pageProps }: AppProps) {
   React.useEffect(() => {
